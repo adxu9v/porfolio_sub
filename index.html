@@ -30,10 +30,70 @@
         $('#mobile_menu').click(function(){
             $('#menu_popup').fadeIn()
         })
+        let main_work_age = 0;
+        let pc_mobile_age = 0;
+        let pc_work_age = 0;
+        let about_me1_age = 0;
+        let about_me2_age = 0;
+        $(window).scroll(function(){
+            sc = $(window).scrollTop()
+            if(sc >= $('#main_work').offset().top-50){
+                $('header').css({'position':'fixed','z-index':'999999','top':'0'})
+            }
+            else{
+                $('header').css({'position':'static'})
+            }
+            if(sc >= $('#main_work').offset().top-500){
+                main_work_age = main_work_age +1
+                if(main_work_age == 1){
+                    $('#main_work_title>h3').animate({'marginTop':'0','opacity':'1'},500);
+                    $('#main_work_title>p').delay(150).animate({'marginTop':'20px','opacity':'1'},500);$('#main_work_img').delay(300).animate({'marginTop':'50px','opacity':'1'},500);
+                }
+                   
+            }
+            if(sc >= $('#pc_mobile').offset().top-300){
+                pc_mobile_age = pc_mobile_age + 1
+                if(pc_mobile_age == 1){
+                    $('#pc_mobile>h3').animate({'marginTop':'0','opacity':'1'},500)
+                $('#pc_mobile>p').delay(150).animate({'marginTop':'20px','opacity':'1'},300)
+                $('#pc_mobile>ul').delay(300).animate({'marginTop':'50px','opacity':'1'},300)
+                }
+            }
+            if(sc >= $('#pc_work').offset().top-300){
+                pc_work_age = pc_work_age + 1
+                if(pc_work_age == 1){
+                    $('#pc_work>h3').animate({'marginTop':'0','opacity':'1'},500)
+                $('#pc_work>p').delay(150).animate({'marginTop':'20px','opacity':'1'},300)
+                $('#pc_work>ul').delay(300).animate({'marginTop':'50px','opacity':'1'},300)
+                }
+            }
+            if(sc >= $('#about_me').offset().top-300){
+                about_me1_age = about_me1_age + 1;
+                if(about_me1_age == 1){
+                    $('#about_me>h3').animate({'marginTop':'0','opacity':'1'},500)
+                $('#about_me_img').delay(150).animate({'marginTop':'20px','opacity':'1'},300)
+                }
+            }
+            if(sc >= $('#about_me').offset().top-100){
+                about_me2_age = about_me2_age + 1;
+                if(about_me2_age == 1){
+                    $('#skill>ul>li:nth-child(1)>.skills_bg>.skills_box').animate({'width':'80%'},300)
+                $('#skill>ul>li:nth-child(2)>.skills_bg>.skills_box')().delay(100).animate({'width':'70%'},300)
+                $('#skill>ul>li:nth-child(3)>.skills_bg>.skills_box').delay(200).animate({'width':'80%'},300)
+                $('#skill>ul>li:nth-child(4)>.skills_bg>.skills_box').delay(300).animate({'width':'70%'},300)
+                }
+            }
+        //     setInterval(function(){
+        //     $('#sc').html(sc)
+        // })
+        })
+       
 	});
   </script>
   <style>
-      * { margin: 0; padding: 0; list-style: none; }
+      #sc{position: fixed; left: 0; top: 0; font-size: 100px; background-color: red; color: blue;}
+      #box{position: fixed; font-size: 100px; color: transparent; left: 0; right: 0; top: 0; bottom: 0; margin: auto; clip-path: url(#box);}
+      * { margin: 0; padding: 0; list-style: none;}
       a { text-decoration: none; color: inherit;}
       body,html{width: 100%; height: 100%;}
       #main{width: 100%; height: 100%; background: url(cat.jpg) center no-repeat; background-size: cover; color: #fff; position: relative;}
@@ -57,7 +117,9 @@
       .sub>li:hover{color: #000;}
       #main_work{width: 100%; padding: 100px 0; background-color: #eee;}
       #main_work_title{width: 1200px; text-align: center; margin: auto;}
-      #main_work_img{width: 970px; margin: auto; display: block; margin-top: 50px; border-radius: 20px; box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);}
+      #main_work_title>h3{margin-top: 30px; opacity: 0;}
+      #main_work_title>p{margin-top: 50px; opacity: 0;}
+      #main_work_img{width: 970px; margin: auto; display: block; margin-top: 80px; border-radius: 20px; box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); opacity: 0;}
       #main_work1{width: 1200px; margin: auto; margin-top: 50px;}
       #main_work1::after{content: ""; display: block; clear: both;}
       #main_work1_left_img{width: 40%; float: left;}
@@ -65,6 +127,91 @@
       #main_work1_right>img{width: 300px; margin-top: 30px;}
       #main_work1_right>p{margin-top: 50px;}
       #main_work1_right>button{width: 130px; height: 40px; border: 2px solid #000; background-color: #eee; border-radius: 50px; margin-top: 20px; cursor: pointer;}
+      #main_work2{width: 1200px; margin: auto; margin-top: 100px;}
+      #main_work2::after{content: ""; display: block; clear: both;}      #main_work2_left{width: 75%; height: 700px; float: left; }
+      #main_work2_left_fonts{}
+      #main_work2_left_fonts>h2{font-size: 24px; line-height: 50px;}
+      #main_work2_left_fonts>ul::after{content: ""; display: block; clear: both;}
+      #main_work2_left_fonts>ul>li{width: 25%; float: left;}
+      #main_work2_left_fonts>ul>li>h3{font-size: 16px; line-height: 20px;}
+      #main_work2_left_fonts>ul>li>h4{margin-top: 25px; font-size: 14px; font-weight: 400; color: #999; text-decoration: underline;}
+      #main_work2_left_fonts>p{margin-top: 20px;}
+      #main_work2_left_colors{margin-top: 50px;}
+      #main_work2_left_colors>h2{font-size: 24px; line-height: 50px;}
+      #main_work2_left_colors>ul::after{content: ""; display: block; clear: both;}
+      #main_work2_left_colors>ul>li{float: left; width: 25%;}
+      #main_work2_left_colors>ul>li>.color_box{width: 100%; height: 20px; border: 1px solid #ddd; box-sizing: border-box;}
+      #main_work2_left_colors>ul>li:nth-child(1)>.color_box{background-color: #000;}
+      #main_work2_left_colors>ul>li:nth-child(2)>.color_box{background-color: #fedc00;}
+      #main_work2_left_colors>ul>li:nth-child(3)>.color_box{background-color: #fff;}
+      #main_work2_left_colors>ul>li:nth-child(4)>.color_box{background-color: #ddd;}
+      #main_work2_left_colors>ul>li>h4{margin-top: 5px; font-size: 16px; font-weight: 400; color: #999; text-decoration: underline;}
+      #main_work2_left_colors>p{margin-top: 30px;}
+      #main_work2_left_icons{margin-top: 50px;}
+      #main_work2_left_icons>h2{font-size: 24px; line-height: 50px; margin-top: 30px;}
+      #main_work2_left_icons>ul::after{content: ""; display: block; clear: both;}
+      #main_work2_left_icons>ul>li{float: left; width: 20px; margin-right: 20px; margin-top: 30px;}
+      #main_work2_left_icons>ul>li>img{width: 100%; vertical-align: middle;}
+      #main_work2_left_icons>p{margin-top: 30px;}
+      #main_work2_right{width: 23%; height: 700px; float: right; background-color: green; overflow: hidden; border-radius: 20px; box-shadow: 5px 10px 20px rgba(0, 0, 0, 0.4);}
+      #main_work2_right>img{width: 100%;}
+      #pc_work{width: 100%; background-color: #ddd; padding: 100px 0; text-align: center;}
+      #pc_work>h3{font-size: 22px; margin-top: 30px; opacity: 0;}
+      #pc_work>p{width: 90%; margin: auto; margin-top: 50px; opacity: 0;}
+      #pc_work>ul{width: 1200px; margin: auto; margin-top: 60px; opacity: 0;}
+      #pc_work>ul::after{content: ""; display: block; clear: both;}
+      #pc_work>ul>li{width: 30.33%; margin: 1.5%; float: left; border-radius: 20px; overflow: hidden; background-color: #000; position: relative; cursor: pointer;}
+      #pc_work>ul>li>img{width: 100%; vertical-align: top;}
+      #pc_work>ul>li>button{position: absolute; width: 120px; height: 30px; border: 1px solid #fff; color: #fff; background-color: transparent; top: 0; bottom: 0; left: 0; right: 0; margin: auto; border-radius: 50px; display: none; transition: 0.3s; cursor: pointer;}
+      #pc_work>ul>li:hover>button{display: inline;}
+      #pc_work>ul>li:hover>img{opacity: 0.5;}
+      #pc_work>ul>li>button:hover{background-color: #000; border-color: #000;}
+      #pc_mobile{width: 100%; padding: 100px 0; text-align: center;}
+      #pc_mobile>h3{margin-top: 30px; opacity: 0;}
+      #pc_mobile>p{margin-top: 50px; opacity: 0;}
+      #pc_mobile>ul{width: 1200px; margin: auto; margin-top: 80px; opacity: 0;}
+      #pc_mobile>ul::after{content: ""; display: block; clear: both;}
+      #pc_mobile>ul>li{width: 44%; margin: 3%; float: left; position: relative; padding: 15px; box-sizing: border-box; border-radius: 20px; transition: 0.3s;}
+      #pc_mobile>ul>li:hover{background-color: #ddd;}
+      #pc_mobile>ul>li:hover>button{opacity: 1;}
+      #pc_mobile>ul>li>img{box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.4); border-radius: 10px;}
+      #pc_mobile>ul>li>.pc{width: 94%; position: absolute; top: 3%; left: 3%;}
+      #pc_mobile>ul>li>.tablet{width: 70%; display: inline-block; vertical-align: bottom; z-index: 2; position: relative;}
+      #pc_mobile>ul>li>.mobile{width: 25%; display: inline-block; vertical-align: bottom; z-index: 2; position: relative;}
+      #pc_mobile>ul>li>button{width: 120px; height: 30px; position: absolute; top: 0; bottom: 0; left: 0; right: 0; margin: auto; border: none; background-color: #000; color: #fff; z-index: 3; border-radius: 50px; opacity: 0; transition: 0.3s; cursor: pointer;}
+      #pc_mobile>ul>li>button:hover{background-color: #fff; color: #000;}
+      #about_me{width: 100%; padding: 100px 0; text-align: center;}
+      #about_me>h3{margin-top: 30px; opacity: 0;}
+      #about_me>#about_me_img{width: 200px; height: 200px; border-radius: 200px; margin-top: 50px; opacity: 0;}
+      #about_me1{width: 1000px; border-top: 1px solid #ccc; margin: auto; margin-top: 30px; border-top: 1px solid #000; overflow: hidden;}
+      #liscence{width: 48%; margin: 1%; float: left; text-align: left;}
+      #liscence>h4{font-size: 16px; line-height: 40px; margin-left: 20px;}
+      #liscence>ul{width: 90%; margin: auto;}
+      #liscence>ul>li{line-height: 40px;}
+      #liscence>ul>li::after{content: ""; display: block; clear: both;}
+      #liscence>ul>li>h5{float: left;}
+      #liscence>ul>li>h6{float: right;}
+      #skill{width: 48%; margin: 1%; float: right;}
+      #skill>h4{font-size: 16px; line-height: 40px; text-align: left; margin-left: 20px;}
+      #skill>ul{width: 90%; margin: auto;}
+      #skill>ul>li{font-size: 16px; line-height: 30px; overflow: hidden;}
+      /* #skill>ul>li::after{content: ""; display: block; clear: both;} */
+      #skill>ul>li>h5{float: left;}
+      #skill>ul>li>h6{float: right;}
+      #skill>ul>li>.skills_bg{width: 100%; height: 10px; background-color: #ccc; margin-top: 30px;}
+      #skill>ul>li>.skills_bg>.skills_box{width: 0%; height: 10px; background: linear-gradient(to right, #63f, #c09);}
+      #about_me2{width: 1000px; margin: auto; margin-top: 30px; border-top: 1px solid #000; text-align: left; padding: 1.5%; box-sizing: border-box;}
+      #contact_me{width: 100%; padding: 100px 0; background: url(cat.jpg) center no-repeat fixed; background-size: cover; color: #fff; text-align: center;}#contact_me>h4{line-height: 40px;}
+      #contact_me>ul{width: 1000px; margin: auto;}
+      #contact_me>ul::after{content: ""; display: block; clear: both;}
+      #contact_me>ul>li{float: left;}
+      #contact_me>ul>li:nth-child(1){width: 25%; padding: 30px 0; border-right: 1px solid #eee; box-sizing: border-box;}
+      #contact_me>ul>li:nth-child(2){width: 50%; padding: 30px 0; border-right: 1px solid #eee; box-sizing: border-box;}
+      #contact_me>ul>li:nth-child(3){width: 25%; padding: 30px 0; box-sizing: border-box;}
+      footer{width: 100%; background-color: #ddd; padding: 10px 20px; box-sizing: border-box;}
+      footer::after{content: ""; display: block; clear: both;}
+      footer>h3{float: left; line-height: 50px;}
+      footer>p{float: right; line-height: 25px; text-align: right;}
   </style>
   <style>
     /*미디어쿼리*/
@@ -81,7 +228,23 @@
         #main_work1_right>img{margin-top: 0px;}
         #main_work1_right>p{margin-top: 20px;}
         #main_work1_right>button{margin-top: 15px;}
-        
+        #main_work2{width: 90%;}
+        #main_work2_left{width: 100%;}
+        #main_work2_right{width: 23%; display: none;}
+        #pc_work>ul{width: 90%;}
+        #pc_work>ul>li{width: 46%; margin: 2%;}
+        #pc_mobile>ul{width: 90%;}
+        #pc_mobile>ul>li{width: 92%; margin: 4%;}
+        #about_me1{width: 90%;}
+        #liscence{width: 92%; margin: 4%;}
+        #skill{width: 92%; margin: 4%;}
+        #about_me2{width: 90%;}
+        #contact_me>ul{width: 90%;}
+        #contact_me>ul>li:nth-child(1){width: 100%; border-right:none;}
+        #contact_me>ul>li:nth-child(2){width: 100%; border-right: none;}
+        #contact_me>ul>li:nth-child(3){width: 100%;}
+        footer>h3{float: none;}
+        footer>p{float: none;}
     }
     @media all and (min-width:768px) { /* 768~1023 태블릿 */
         #main>h1{font-size: 35px; top: -20px;}
@@ -96,7 +259,23 @@
         #main_work1_right>img{margin-top: 0px;}
         #main_work1_right>p{margin-top: 20px;}
         #main_work1_right>button{margin-top: 15px;}
-        
+        #main_work2{width: 90%;}
+        #main_work2_left{width: 75%;}
+        #main_work2_right{width: 23%; display: block;}
+        #pc_work>ul{width: 90%;}
+        #pc_work>ul>li{width: 30.33%; margin: 1.5%;}
+        #pc_mobile>ul{width:90%;}
+        #pc_mobile>ul>li{width: 44%; margin: 3%;}
+        #about_me1{width: 90%;}
+        #liscence{width: 48%; margin: 1%;}
+        #skill{width: 48%; margin: 1%;}
+        #about_me2{width: 90%;}
+        #contact_me>ul{width: 90%;}
+        #contact_me>ul>li:nth-child(1){width: 25%; border-right: 1px solid #eee;}
+        #contact_me>ul>li:nth-child(2){width: 50%; border-right: 1px solid #eee;}
+        #contact_me>ul>li:nth-child(3){width: 25%;}
+        footer>h3{float: left;}
+        footer>p{float: right;}
     }
     @media all and (min-width:1200px) { /* 1200 pc */
         #main>h1{font-size: 35px; top: -20px;}
@@ -111,6 +290,23 @@
         #main_work1_right>img{margin-top: 30px;}
         #main_work1_right>p{margin-top: 50px;}
         #main_work1_right>button{margin-top: 20px;}
+        #main_work2{width: 1200px;}
+        #main_work2_left{width: 75%;}
+        #main_work2_right{width: 23%; display: block;}
+        #pc_work>ul{width: 1200px;}
+        #pc_work>ul>li{width: 30.33%; margin: 1.5%;}
+        #pc_mobile>ul{width: 1200px;}
+        #pc_mobile>ul>li{width: 44%; margin: 3%;}
+        #about_me1{width: 1000px;}
+        #liscence{width: 48%; margin: 1%;}
+        #skill{ width: 48%; margin: 1%;}
+        #about_me2{width: 1000px;}
+        #contact_me>ul{width: 1000px;}
+        #contact_me>ul>li:nth-child(1){width: 25%; border-right: 1px solid #eee;}
+        #contact_me>ul>li:nth-child(2){width: 50%; border-right: 1px solid #eee;}
+        #contact_me>ul>li:nth-child(3){width: 25%;}
+        footer>h3{float: left;}
+        footer>p{float: right;}
     }
   </style>
 </head>
@@ -179,6 +375,192 @@
                 <button>Let's see !</button>
             </div>
         </div>
+        <div id="main_work2">
+            <div id="main_work2_left">
+                <div id="main_work2_left_fonts">
+                    <h2>fonts</h2>
+                    <ul>
+                        <li>
+                            <h3>National
+                                Geographic</h3>
+                            <h4>Nanum Gothic</h4>
+                        </li>
+                        <li>
+                            <h3>ational
+                                Geographic</h3>
+                            <h4>Roboto</h4>
+                        </li>
+                        <li>
+                            <h3>National
+                                Geographic</h3>
+                            <h4>Roboto Slab
+                            </h4>
+                        </li>
+                    </ul>
+                    <p>전체적으로 깔끔한 느낌의 폰트 사용, Roboto slab 폰트로 포인트를 주었습니다.</p>
+                </div>
+                <div id="main_work2_left_colors">
+                    <h2>colors</h2>
+                    <ul>
+                        <li>
+                            <div class="color_box"></div>
+                            <h4>#000
+                            </h4>
+                        </li>
+                        <li>
+                            <div class="color_box"></div>
+                            <h4>#fedc00</h4>
+                        </li>
+                        <li>
+                            <div class="color_box"></div>
+                            <h4>#fff</h4>
+                        </li>
+                        <li>
+                            <div class="color_box"></div>
+                            <h4>#ddd</h4>
+                        </li>
+                    </ul>
+                    <p>National Geographic의 심볼컬러를 메인으로 사용하여 고유의 느낌을 전달하고자 하였으며,
+                        사용된 이미지를 방해하지 않는 무채색 컬러를 선택하여 사용하였습니다.</p>
+                </div>
+                <div id="main_work2_left_icons">
+                    <h2>icons</h2>
+                    <ul>
+                        <li><img src="icons/arrowbt_black_l.png" alt=""></li>
+                        <li><img src="icons/arrowbt_gray_r.png" alt=""></li>
+                        <li><img src="icons/scroll_down_b.png" alt=""></li>
+                        <li><img src="icons/scroll_top_b.png" alt=""></li>
+                        <li><img src="icons/section3_mobile_black_l.png" alt=""></li>
+                        <li><img src="icons/section3_mobile_gray_r.png" alt=""></li>
+                        <li><img src="icons/section4_playlist_btn_b.png" alt=""></li>
+                        <li><img src="icons/sns_facebook_b.png" alt=""></li>
+                        <li><img src="icons/sns_home.png" alt=""></li>
+                        <li><img src="icons/sns_insta_b.png" alt=""></li>
+                    </ul>
+                    <p>무채색의 아이콘을 사용하여 집중도는 물론 이미지간의 조화를 완성했습니다.</p>
+                </div>
+            </div>
+            <div id="main_work2_right">
+                <img src="images/phone_img.jpg" alt="">
+            </div>
+        </div>
     </section>
+    <section id="pc_work">
+        <h3>Pc version works</h3>
+        <p>And besides this work, I’m looking forward for new projects and opportunities.</p>
+        <ul>
+            <li><img src="images/lush.jpg" alt=""><button>lush</button></li>
+            <li><img src="images/ford.jpg" alt=""><button>ford</button></li>
+            <li><img src="images/konacard.jpg" alt=""><button>konacard</button></li>
+            <li><img src="images/laneige.jpg" alt=""><button>laneige</button></li>
+            <li><img src="images/coffeebean.jpg" alt=""><button>coffebean</button></li>
+            <li><img src="images/radisson.jpg" alt=""><button>radisson</button></li>
+        </ul>
+    </section>
+    <section id="pc_mobile">
+        <h3>Responsive Web</h3>
+        <p>It's a little bit, but I've done some responsive work</p>
+        <ul>
+            <li>
+                <img src="images/bts.jpg" alt="" class="pc">
+                <img src="images/bts_ipad2.png" alt="" class="tablet">
+                <img src="images/bts_iphone2.png" alt="" class="mobile">
+                <button>BTS</button>
+            </li>
+            <li>
+                <img src="images/samsungpay.jpg" alt="" class="pc">
+                <img src="images/samsungpay_ipad.png" alt="" class="tablet">
+                <img src="images/samsungpay_iphone.png" alt="" class="mobile">
+                <button>SamsungPay</button>
+            </li>
+        </ul>
+    </section>
+    <section id="about_me">
+        <h3>About Me</h3>
+        <img src="" alt="" id="about_me_img">
+        <h4>web, ux/ui designer</h4>
+        <h2>BORA KIM</h2>
+        <article id="about_me1">
+            <div id="liscence">
+                <h4>liscence</h4>
+                <ul>
+                    <li>
+                        <h5>gtq 1급</h5>
+                        <h6>2022.01</h6>
+                    </li>
+                    <li>
+                        <h5>gtq 일러스트 1급</h5>
+                        <h6>2022.01</h6>
+                    </li>
+                    <li>
+                        <h5>자동차 운전면허</h5>
+                        <h6>2021.07</h6>
+                    </li>
+                </ul>
+            </div>
+            <div id="skill">
+                <h4>skill</h4>
+                <ul>
+                    <li>
+                        <h5>Photoshop</h5>
+                        <h6>80%</h6>
+                        <div class="skills_bg">
+                            <div class="skills_box"></div>
+                        </div>
+                    </li>
+                    <li>
+                        <h5>Illustrator</h5>
+                        <h6>70%</h6>
+                        <div class="skills_bg">
+                            <div class="skills_box"></div>
+                        </div>
+                    </li>
+                    <li>
+                        <h5>Html,Css</h5>
+                        <h6>80%</h6>
+                        <div class="skills_bg">
+                            <div class="skills_box"></div>
+                        </div>
+                    </li>
+                    <li>
+                        <h5>Javascript(Jquery)</h5>
+                        <h6>70%</h6>
+                        <div class="skills_bg">
+                            <div class="skills_box"></div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </article>
+        <article id="about_me2">
+            <h2>Introduction</h2>
+            <p>안녕하세요! 저는 올해 9년차 웹디자이너입니다. 앞으로의 업무역량을 확장하고자 새롭게 퍼플리싱에 도전해 웹표준 html5, css, Jquery, javascript를 익혔으며 젠코딩과 하드코딩 및 반응형 작업을 할 수 있습니다. 웹디자이너 업무 중 해결할 수 없어 답답하고 궁금해왔던것을 배우게 되니 새롭고 흥미로워 열심히 임했습니다. <br><br> 포트폴리오 최상단 메인작업의 경우 디자인기획부터 script 동작에 이르기까지 최선을 다해 완성했습니다. 지금까지 쌓아온 디자이너 경험을 바탕삼아 앞으로 웹퍼블리셔로서 또 디자이너로서 멋지게 활동할것을 확신합니다.</p>
+        </article>
+    </section>
+    <section id="contact_me">
+        <h4>Contact Me</h4>
+        <ul>
+            <li>
+                <p>jhw <br> 010-</p>
+            </li>
+            <li>
+                <p>Republicof Korea <br> Uijeongbu</p>
+            </li>
+            <li>
+                <p>mail <br> jjsu4852@naver.com</p>
+            </li>
+        </ul>
+    </section>
+    <footer>
+        <h3>
+            hw
+        </h3>
+        <p>
+            BORAKIM 2021 copyright @ ALL RIGHTS RESERVED. <br>
+creating modern and responsive design for Web and Mobile
+        </p>
+    </footer>
+    <!-- <div id="box">1</div>
+    <div id="sc">0</div> -->
 </body>
 </html>
