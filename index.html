@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="KOR">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <!-- 모바일은 화면크기를 자동으로 줄여서 표현하는 방식. 1:1사이즈의 대응을 위하여 viewport코드를 추가한다 -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>HW_portfolio</title>
     <!-- 제이쿼리 설치 -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script>
@@ -39,9 +39,11 @@
             sc = $(window).scrollTop()
             if(sc >= $('#main_work').offset().top-50){
                 $('header').css({'position':'fixed','z-index':'999999','top':'0'})
+                $('#close_btn').css({'margin-top':'70px'})
             }
             else{
                 $('header').css({'position':'static'})
+                $('#close_btn').css({'margin-top':'10px'})
             }
             if(sc >= $('#main_work').offset().top-500){
                 main_work_age = main_work_age +1
@@ -49,7 +51,7 @@
                     $('#main_work_title>h3').animate({'marginTop':'0','opacity':'1'},500);
                     $('#main_work_title>p').delay(150).animate({'marginTop':'20px','opacity':'1'},500);$('#main_work_img').delay(300).animate({'marginTop':'50px','opacity':'1'},500);
                 }
-                   
+
             }
             if(sc >= $('#pc_mobile').offset().top-300){
                 pc_mobile_age = pc_mobile_age + 1
@@ -86,11 +88,31 @@
         //     setInterval(function(){
         //     $('#sc').html(sc)
         // })
+
         })
-       
+        let main_sc = $('#main_work').offset().top
+        let responsive_sc = $('#pc_mobile').offset().top
+        let pc_work_sc = $('#pc_work').offset().top
+        let about_me_sc = $('#about_me').offset().top
+        $('.menu_home').click(function(){
+            $('body,html').animate({'scrollTop':'0'})
+        })
+        $('.menu_main').click(function(){
+            $('body,html').animate({'scrollTop':main_sc})
+        })
+        $('.menu_responsive').click(function(){
+            $('body,html').animate({'scrollTop':responsive_sc})
+        })
+        $('.menu_pc').click(function(){
+            $('body,html').animate({'scrollTop':pc_work_sc})
+        })
+        $('.menu_about').click(function(){
+            $('body,html').animate({'scrollTop':about_me_sc})
+        })
 	});
   </script>
   <style>
+      * { margin: 0; padding: 0; list-style: none; }
       #sc{position: fixed; left: 0; top: 0; font-size: 100px; background-color: red; color: blue;}
       #box{position: fixed; font-size: 100px; color: transparent; left: 0; right: 0; top: 0; bottom: 0; margin: auto; clip-path: url(#box);}
       * { margin: 0; padding: 0; list-style: none;}
@@ -108,8 +130,8 @@
       #mobile_menu{width: 20px; height: 20px; float: right; margin-top: 15px; margin-right: 20px; cursor: pointer;}
       #mobile_menu>li{width: 20px; height: 2px; background-color: #fff;}
       #mobile_menu>li:nth-child(2){margin: 7px 0;}
-      #menu_popup{width: 100%; height: 100%; position: fixed; left: 0; top: 0; background-color: rgba(255, 255, 255, 0.95); display: none;}
-      #close_btn{float: right; margin: 10px; cursor: pointer;}
+      #menu_popup{width: 100%; height: 100%; position: fixed; left: 0; top: 0; background-color: rgba(255, 255, 255, 0.95); display: none; z-index: 999;}
+      #close_btn{float: right; margin: 10px; margin-top: 70px; cursor: pointer;}
       #menu_popup_menu{float: right; clear: both; margin: 50px 10px 0; text-align: right; color: #999; cursor: pointer;}
       #menu_popup_menu>li{font-size: 20px; line-height: 40px; font-weight: 700; cursor: pointer;}
       #menu_popup_menu>li:hover{color: #000;}
@@ -117,6 +139,7 @@
       .sub>li:hover{color: #000;}
       #main_work{width: 100%; padding: 100px 0; background-color: #eee;}
       #main_work_title{width: 1200px; text-align: center; margin: auto;}
+      #main_work_img{width: 970px; margin: auto; display: block; margin-top: 50px; border-radius: 20px; box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);}
       #main_work_title>h3{margin-top: 30px; opacity: 0;}
       #main_work_title>p{margin-top: 50px; opacity: 0;}
       #main_work_img{width: 970px; margin: auto; display: block; margin-top: 80px; border-radius: 20px; box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); opacity: 0;}
@@ -126,10 +149,10 @@
       #main_work1_right{width: 55%; float: right;}
       #main_work1_right>img{width: 300px; margin-top: 30px;}
       #main_work1_right>p{margin-top: 50px;}
-      #main_work1_right>button{width: 130px; height: 40px; border: none; background-color: #181ef9; border-radius: 50px; margin-top: 20px; cursor: pointer; color: #fff;}
-      #main_work2{width: 1200px; margin: auto; margin-top: 100px; border: 1px solid #000;
-    }
-      #main_work2::after{content: ""; display: block; clear: both;}      #main_work2_left{width: 100%; height: 700px; float: left;}
+      #main_work1_right>button{width: 130px; height: 40px; border: 2px solid #000; background-color: #eee; border-radius: 50px; margin-top: 20px; cursor: pointer;}
+      #main_work2{width: 1200px; margin: auto; margin-top: 100px;}
+      #main_work2::after{content: ""; display: block; clear: both;}      #main_work2_left{width: 100%; height: 700px;  margin: auto;}
+      #main_work2_left_fonts{}
       #main_work2_left_fonts>h2{font-size: 24px; line-height: 50px;}
       #main_work2_left_fonts>ul::after{content: ""; display: block; clear: both;}
       #main_work2_left_fonts>ul>li{width: 25%; float: left;}
@@ -139,10 +162,11 @@
       #main_work2_left_colors{margin-top: 50px;}
       #main_work2_left_colors>h2{font-size: 24px; line-height: 50px;}
       #main_work2_left_colors>ul::after{content: ""; display: block; clear: both;}
-      #main_work2_left_colors>ul>li{float: left; width: 50%;}
+      #main_work2_left_colors>ul>li{float: left; width: 33.33%;}
       #main_work2_left_colors>ul>li>.color_box{width: 100%; height: 20px; border: 1px solid #ddd; box-sizing: border-box;}
       #main_work2_left_colors>ul>li:nth-child(1)>.color_box{background-color: #000;}
-      #main_work2_left_colors>ul>li:nth-child(2)>.color_box{background-color: #fff;}
+      #main_work2_left_colors>ul>li:nth-child(2)>.color_box{background-color: #181ef9;}
+      #main_work2_left_colors>ul>li:nth-child(3)>.color_box{background-color: #fff;}
       #main_work2_left_colors>ul>li>h4{margin-top: 5px; font-size: 16px; font-weight: 400; color: #999; text-decoration: underline;}
       #main_work2_left_colors>p{margin-top: 30px;}
       #main_work2_left_icons{margin-top: 50px;}
@@ -151,14 +175,14 @@
       #main_work2_left_icons>ul>li{float: left; width: 20px; margin-right: 20px; margin-top: 30px;}
       #main_work2_left_icons>ul>li>img{width: 100%; vertical-align: middle;}
       #main_work2_left_icons>p{margin-top: 30px;}
-      #main_work2_right{width: 23%; height: 700px; float: right; overflow: hidden; border-radius: 20px; box-shadow: 5px 10px 20px rgba(0, 0, 0, 0.4);}
+      #main_work2_right{width: 23%; height: 700px; float: right; background-color: green; overflow: hidden; border-radius: 20px; box-shadow: 5px 10px 20px rgba(0, 0, 0, 0.4);}
       #main_work2_right>img{width: 100%;}
       #pc_work{width: 100%; background-color: #ddd; padding: 100px 0; text-align: center;}
       #pc_work>h3{font-size: 22px; margin-top: 30px; opacity: 0;}
       #pc_work>p{width: 90%; margin: auto; margin-top: 50px; opacity: 0;}
       #pc_work>ul{width: 1200px; margin: auto; margin-top: 60px; opacity: 0;}
       #pc_work>ul::after{content: ""; display: block; clear: both;}
-      #pc_work>ul>li{width: 30.33%;  margin: 1.5%; float: left; border-radius: 20px; overflow: hidden; background-color: #000; position: relative; cursor: pointer;}
+      #pc_work>ul>li{width: 30.33%; margin: 1.5%; float: left; border-radius: 20px; overflow: hidden; background-color: #000; position: relative; cursor: pointer; box-sizing: border-box;}
       #pc_work>ul>li>img{width: 100%; vertical-align: top;}
       #pc_work>ul>li>button{position: absolute; width: 120px; height: 30px; border: 1px solid #fff; color: #fff; background-color: transparent; top: 0; bottom: 0; left: 0; right: 0; margin: auto; border-radius: 50px; display: none; transition: 0.3s; cursor: pointer;}
       #pc_work>ul>li:hover>button{display: inline;}
@@ -199,7 +223,8 @@
       #skill>ul>li>.skills_bg{width: 100%; height: 10px; background-color: #ccc; margin-top: 30px;}
       #skill>ul>li>.skills_bg>.skills_box{width: 0%; height: 10px; background: linear-gradient(to right, #63f, #c09);}
       #about_me2{width: 1000px; margin: auto; margin-top: 30px; border-top: 1px solid #000; text-align: left; padding: 1.5%; box-sizing: border-box;}
-      #contact_me{width: 100%; padding: 100px 0; background: url(images/oculus_footer_img.jpg) center no-repeat fixed; background-size: cover; color: #fff; text-align: center;}#contact_me>h4{line-height: 40px;}
+      #contact_me{width: 100%; padding: 100px 0; background: url(images/119277846_350062113069085_8340726309825428787_n.jpeg) center no-repeat fixed; background-size: cover; color: #fff; text-align: center;}
+      #contact_me>h4{line-height: 40px;}
       #contact_me>ul{width: 1000px; margin: auto;}
       #contact_me>ul::after{content: ""; display: block; clear: both;}
       #contact_me>ul>li{float: left;}
@@ -226,6 +251,7 @@
         #main_work1_right>img{margin-top: 0px;}
         #main_work1_right>p{margin-top: 20px;}
         #main_work1_right>button{margin-top: 15px;}
+
         #main_work2{width: 90%;}
         #main_work2_left{width: 100%;}
         #main_work2_right{width: 23%; display: none;}
@@ -257,8 +283,9 @@
         #main_work1_right>img{margin-top: 0px;}
         #main_work1_right>p{margin-top: 20px;}
         #main_work1_right>button{margin-top: 15px;}
+
         #main_work2{width: 90%;}
-        #main_work2_left{width: 75%;}
+        #main_work2_left{width: 100%;}
         #main_work2_right{width: 23%; display: block;}
         #pc_work>ul{width: 90%;}
         #pc_work>ul>li{width: 30.33%; margin: 1.5%;}
@@ -319,12 +346,11 @@
     <header>
         <h1 id="logo">HW</h1>
         <ul id="menu">
-            <li>Home</li>
-            <li>Main</li>
-            <li>Responsive</li>
-            <li>Pc.ver</li>
-            <li>About</li>
-            <li>Career</li>
+            <li class="menu_home">Home</li>
+            <li class="menu_main">Main</li>
+            <li class="menu_pc">Pc.ver</li>
+            <li class="menu_responsive">Responsive</li>
+            <li class="menu_about">About</li>
         </ul>
         <ul id="mobile_menu">
             <li></li>
@@ -340,22 +366,21 @@
             <li>Main</li>
             <li>Responsive
                 <ul class="sub">
-                    <li>소니</li>
-                    <li></li>
+                    <li><a href=""></a>bts</li>
+                    <li><a href="https://adxu9v.github.io/sony_alpha/" target="blank"></a>소니</li>
                 </ul>
             </li>
             <li>Pc.ver
                 <ul class="sub">
-                    <li>롯데월드</li>
-                    <li>에버랜드</li>
-                    <li>야나두</li>
-                    <li>오뚜기</li>
-                    <li>서브웨이</li>
-                    <li>글로오아시스</li>
+                    <li><a href="https://adxu9v.github.io/lotte/" target="blank">롯데월드</a></li>
+                    <li><a href="https://adxu9v.github.io/ever/" target="blank">에버랜드</a></li>
+                    <li><a href="https://adxu9v.github.io/ottogi/" target="blank">오뚜기</a></li>
+                    <li><a href="" target="blank">라네즈</a></li>
+                    <li><a href="https://adxu9v.github.io/coffeebean/" target="blank">커피빈</a></li>
+                    <li><a href="https://adxu9v.github.io/subway/" target="blank">서브웨이</a></li>
                 </ul>
             </li>
             <li>About</li>
-            <li>Career</li>
         </ul>
     </div>
     <section id="main_work">
@@ -369,8 +394,8 @@
             <img src="images/oculus_main2.png" alt="" id="main_work1_left_img">
             <div id="main_work1_right">
                 <img src="images/Oculus-Logo2_black_resize.png" alt="">
-                <p>평소 it에 관심이 많아 그 중에 최근 메타버스로 뜨고 있는 vr회사인 오큘러스를 주제로 선정하여 디자인 기획부터 css, Jquery, Javascript 작업을 통해 기존 사이트에 없던 새로운 사이트를 구현했습니다. 기획 단계에서 스크롤 애니메이션에 중점을 두고 디자인을 했으며, 기존 사이트에 없던 동적인 효과를 구현하기 위해 노력했습니다. 또한 플러그인을 사용하기 보다는 하드코딩으로 작업을 했습니다.</p>
-                <button>보러가기</button>
+                <p>평소 관심이 많았던 주제중 하나인 it를 기획을 했고 그 중에 최근 메타버스로 뜨고 있는 vr회사인 오큘러스를 주제로 선정하여 작업을 했습니다. 디자인 기획부터 css, Jquery, Javascript 작업을 통해 기존 사이트에 없던 새로운 사이트를 구현했습니다. </p>
+                <button onclick="window.open('https:adxu9v.github.io/oculus/')">Let's see !</button>
             </div>
         </div>
         <div id="main_work2">
@@ -385,6 +410,7 @@
                             <h3>Gill Sans</h3>
                         </li>
                     </ul>
+                    <p>전체적으로 깔끔한 느낌의 폰트 사용, gill sans 폰트로 포인트를 주었습니다.</p>
                 </div>
                 <div id="main_work2_left_colors">
                     <h2>colors</h2>
@@ -396,26 +422,41 @@
                         </li>
                         <li>
                             <div class="color_box"></div>
+                            <h4>#181ef9</h4>
+                        </li>
+                        <li>
+                            <div class="color_box"></div>
                             <h4>#fff</h4>
                         </li>
                     </ul>
+                    <p>기존 사이트의 분위기를 살리기 위해 #181ef9 컬러를 사용했으며,
+                        사용된 이미지를 방해하지 않는 무채색 컬러를 선택하여 사용하였습니다.</p>
+                </div>
+                <div id="main_work2_left_icons">
+                    <h2>icons</h2>
+                    <ul>
+                        <li><img src="icons/fb_icon.png" alt=""></li>
+                        <li><img src="icons/ins_icon.png" alt=""></li>
+                        <li><img src="icons/youtube_icon.png" alt=""></li>
+                        <li><img src="icons/pause.png" alt=""></li>
+                        <li><img src="icons/slide_play_bt.png" alt=""></li>
+                        <li><img src="icons/slide_arrow_bt.png" alt=""></li>
+                    </ul>
+                    <p>무채색의 아이콘을 사용하여 집중도는 물론 이미지간의 조화를 완성했습니다.</p>
                 </div>
             </div>
-            <!-- <div id="main_work2_right">
-                
-            </div> -->
         </div>
     </section>
     <section id="pc_work">
         <h3>Pc version works</h3>
         <p>And besides this work, I’m looking forward for new projects and opportunities.</p>
         <ul>
-            <li><img src="images/lotte_main.png" alt=""><button>lotte world</button></li>
-            <li><img src="images/ford.jpg" alt=""><button>ever land</button></li>
-            <li><img src="images/ottogi_main.png" alt=""><button>ottogi</button></li>
-            <li><img src="images/laneige.jpg" alt=""><button>yanado</button></li>
-            <li><img src="images/coffeebean.jpg" alt=""><button>subway</button></li>
-            <!-- <li><img src="images/radisson.jpg" alt=""><button></button></li> -->
+            <li><img src="images/lotte_main.png" alt=""><button onclick="window.open('https:adxu9v.github.io/lotte/')">lotteworld</button></li>
+            <li><img src="images/ever_main.jpg" alt=""><button onclick="window.open('https:adxu9v.github.io/ever/')">everland</button></li>
+            <li><img src="images/ottogi_main.jpg" alt=""><button onclick="window.open('https:adxu9v.github.io/ottogi/')">ottogi</button></li>
+            <li><img src="images/laneige.jpg" alt=""><button onclick="window.open('https:adxu9v.github.io/laneige')">laneige</button></li>
+            <li><img src="images/coffeebean.jpg" alt=""><button onclick="window.open('https:adxu9v.github.io/coffebean/')">coffebean</button></li>
+            <li><img src="images/subway_main.jpg" alt=""><button onclick="window.open('https:adxu9v.github.io/subway/')">subway</button></li>
         </ul>
     </section>
     <section id="pc_mobile">
@@ -423,16 +464,16 @@
         <p>It's a little bit, but I've done some responsive work</p>
         <ul>
             <li>
-                <img src="images/bts.jpg" alt="" class="pc">
+                <img src="images/bts_main.png" alt="" class="pc">
                 <img src="images/bts_ipad2.png" alt="" class="tablet">
                 <img src="images/bts_iphone2.png" alt="" class="mobile">
-                <button>BTS</button>
+                <button onclick="window.open('https:adxu9v.github.io/bts_mobile/')">BTS</button>
             </li>
             <li>
                 <img src="images/samsungpay.jpg" alt="" class="pc">
                 <img src="images/samsungpay_ipad.png" alt="" class="tablet">
                 <img src="images/samsungpay_iphone.png" alt="" class="mobile">
-                <button>sony alpha</button>
+                <button onclick="window.open('https:adxu9v.github.io/sony_alpha/')">SonyAlpha</button>
             </li>
         </ul>
     </section>
@@ -495,7 +536,7 @@
         </article>
         <article id="about_me2">
             <h2>Introduction</h2>
-            <p>안녕하세요! 신입 웹퍼블리셔 정하원입니다.  새롭게 퍼블리싱에 도전해 웹표준 html5, css, Jquery, javascript를 공부했으며 일반적인 pc 웹 퍼블리싱 및 반응형 작업을 배울 수 있었습니다. 웹디자이너 업무 중 해결할 수 없어 답답하고 궁금해왔던것을 배우게 되니 새롭고 흥미로워 열심히 임했습니다. <br><br> 포트폴리오 최상단 메인작업의 경우 디자인기획부터 script 동작에 이르기까지 최선을 다해 완성했습니다. 지금까지 공부하며 쌓아온 지식을 바탕삼아 앞으로 웹퍼블리셔로서 멋지게 활동할것을 확신합니다.</p>
+            <p>안녕하세요! 신입 웹퍼블리셔 정하원입니다.  새롭게 퍼블리싱에 도전해 웹표준 html5, css, Jquery, javascript를 공부했으며 일반적인 pc 웹 퍼블리싱 및 반응형 작업을 배울 수 있었습니다. <br><br> 포트폴리오 최상단 메인작업의 경우 디자인기획부터 script 동작에 이르기까지 최선을 다해 완성했습니다. 지금까지 공부하며 쌓아온 지식을 바탕삼아 앞으로 웹퍼블리셔로서 멋지게 활동하겠습니다.</p>
         </article>
     </section>
     <section id="contact_me">
@@ -518,10 +559,10 @@
         </h3>
         <p>
             HW 2021 copyright @ ALL RIGHTS RESERVED. <br>
-creating modern and responsive design for Web and Mobile
+            creating modern and responsive design for Web and Mobile
         </p>
     </footer>
     <!-- <div id="box">1</div>
     <div id="sc">0</div> -->
 </body>
-</html>
+</html> 
