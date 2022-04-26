@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="KOR">
+<html lang="kor">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -85,10 +85,6 @@
                 $('#skill>ul>li:nth-child(4)>.skills_bg>.skills_box').delay(300).animate({'width':'70%'},300)
                 }
             }
-        //     setInterval(function(){
-        //     $('#sc').html(sc)
-        // })
-
         })
         let main_sc = $('#main_work').offset().top
         let responsive_sc = $('#pc_mobile').offset().top
@@ -137,7 +133,7 @@
       #menu_popup_menu>li:hover{color: #000;}
       .sub{margin: 15px 0; font-size: 14px; line-height: 25px; font-weight: 400; cursor: pointer; color: #999; display: none;}
       .sub>li:hover{color: #000;}
-      #main_work{width: 100%; padding: 100px 0; background-color: #eee;}
+      #main_work{width: 100%; padding: 100px 0; background-color: #ccc; }
       #main_work_title{width: 1200px; text-align: center; margin: auto;}
       #main_work_img{width: 970px; margin: auto; display: block; margin-top: 50px; border-radius: 20px; box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);}
       #main_work_title>h3{margin-top: 30px; opacity: 0;}
@@ -149,10 +145,9 @@
       #main_work1_right{width: 55%; float: right;}
       #main_work1_right>img{width: 300px; margin-top: 30px;}
       #main_work1_right>p{margin-top: 50px;}
-      #main_work1_right>button{width: 130px; height: 40px; border: 2px solid #000; background-color: #eee; border-radius: 50px; margin-top: 20px; cursor: pointer;}
+      #main_work1_right>button{width: 130px; height: 40px; border: 2px solid #fff;  border-radius: 50px; margin-top: 20px; cursor: pointer;}
       #main_work2{width: 1200px; margin: auto; margin-top: 100px;}
       #main_work2::after{content: ""; display: block; clear: both;}      #main_work2_left{width: 100%; height: 700px;  margin: auto;}
-      #main_work2_left_fonts{}
       #main_work2_left_fonts>h2{font-size: 24px; line-height: 50px;}
       #main_work2_left_fonts>ul::after{content: ""; display: block; clear: both;}
       #main_work2_left_fonts>ul>li{width: 25%; float: left;}
@@ -163,7 +158,7 @@
       #main_work2_left_colors>h2{font-size: 24px; line-height: 50px;}
       #main_work2_left_colors>ul::after{content: ""; display: block; clear: both;}
       #main_work2_left_colors>ul>li{float: left; width: 33.33%;}
-      #main_work2_left_colors>ul>li>.color_box{width: 100%; height: 20px; border: 1px solid #ddd; box-sizing: border-box;}
+      #main_work2_left_colors>ul>li>.color_box{width: 100%; height: 20px;  box-sizing: border-box;}
       #main_work2_left_colors>ul>li:nth-child(1)>.color_box{background-color: #000;}
       #main_work2_left_colors>ul>li:nth-child(2)>.color_box{background-color: #181ef9;}
       #main_work2_left_colors>ul>li:nth-child(3)>.color_box{background-color: #fff;}
@@ -362,15 +357,15 @@
     <div id="menu_popup">
         <img src="icons/close_btn.png" alt="" id="close_btn">
         <ul id="menu_popup_menu">
-            <li>Home</li>
-            <li>Main</li>
-            <li>Responsive
+            <li class="menu_home">Home</li>
+            <li class="menu_main">Main</li>
+            <li class="menu_responsive">Responsive
                 <ul class="sub">
-                    <li><a href=""></a>bts</li>
-                    <li><a href="https://adxu9v.github.io/sony_alpha/" target="blank"></a>소니</li>
+                    <li><a href="https://adxu9v.github.io/bts_mobile/" target="blank">BTS</a></li>
+                    <li><a href="https://adxu9v.github.io/sony_alpha/" target="blank">SonyAlpha</a></li>
                 </ul>
             </li>
-            <li>Pc.ver
+            <li class="menu_pc">Pc.ver
                 <ul class="sub">
                     <li><a href="https://adxu9v.github.io/lotte/" target="blank">롯데월드</a></li>
                     <li><a href="https://adxu9v.github.io/ever/" target="blank">에버랜드</a></li>
@@ -380,7 +375,7 @@
                     <li><a href="https://adxu9v.github.io/subway/" target="blank">서브웨이</a></li>
                 </ul>
             </li>
-            <li>About</li>
+            <li class="menu_about">About</li>
         </ul>
     </div>
     <section id="main_work">
@@ -460,8 +455,8 @@
         </ul>
     </section>
     <section id="pc_mobile">
-        <h3>Responsive Web</h3>
-        <p>It's a little bit, but I've done some responsive work</p>
+        <h3>Responsive & Mobile Web</h3>
+        <p>본 사이트들은 모바일 & 태블릿에 최적화 되어있습니다</p>
         <ul>
             <li>
                 <img src="images/bts_main.png" alt="" class="pc">
@@ -533,10 +528,6 @@
                     </li>
                 </ul>
             </div>
-        </article>
-        <article id="about_me2">
-            <h2>Introduction</h2>
-            <p>안녕하세요! 신입 웹퍼블리셔 정하원입니다.  새롭게 퍼블리싱에 도전해 웹표준 html5, css, Jquery, javascript를 공부했으며 일반적인 pc 웹 퍼블리싱 및 반응형 작업을 배울 수 있었습니다. <br><br> 포트폴리오 최상단 메인작업의 경우 디자인기획부터 script 동작에 이르기까지 최선을 다해 완성했습니다. 지금까지 공부하며 쌓아온 지식을 바탕삼아 앞으로 웹퍼블리셔로서 멋지게 활동하겠습니다.</p>
         </article>
     </section>
     <section id="contact_me">
