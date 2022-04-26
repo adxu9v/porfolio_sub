@@ -48,8 +48,9 @@
             if(sc >= $('#main_work').offset().top-500){
                 main_work_age = main_work_age +1
                 if(main_work_age == 1){
-                    $('#main_work_title>h3').animate({'marginTop':'0','opacity':'1'},500);
-                    $('#main_work_title>p').delay(150).animate({'marginTop':'20px','opacity':'1'},500);$('#main_work_img').delay(300).animate({'marginTop':'50px','opacity':'1'},500);
+                    $('.main_work_oculus_logo').animate({'margin-top':'0px','opacity':'1'},500)
+                    $('#main_work_title>h3').animate({'marginTop':'40px','opacity':'1'},500);
+                    $('#main_work_title>p').delay(150).animate({'marginTop':'50px','opacity':'1'},500);$('#main_work_img').delay(300).animate({'marginTop':'70px','opacity':'1'},500);
                 }
 
             }
@@ -134,18 +135,19 @@
       .sub{margin: 15px 0; font-size: 14px; line-height: 25px; font-weight: 400; cursor: pointer; color: #999; display: none;}
       .sub>li:hover{color: #000;}
       #main_work{width: 100%; padding: 100px 0; background-color: #ccc; }
-      #main_work_title{width: 1200px; text-align: center; margin: auto;}
+      .main_work_oculus_logo{width: 100px; margin: auto; opacity: 0; margin-top: 10px;}
+      #main_work_title{width: 1200px; text-align: center; margin: auto; }
       #main_work_img{width: 970px; margin: auto; display: block; margin-top: 50px; border-radius: 20px; box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);}
-      #main_work_title>h3{margin-top: 30px; opacity: 0;}
-      #main_work_title>p{margin-top: 50px; opacity: 0;}
+      #main_work_title>h3{margin-top: 50px; opacity: 0; font-size: 30px;}
+      #main_work_title>p{margin-top: 70px; opacity: 0;}
       #main_work_img{width: 970px; margin: auto; display: block; margin-top: 80px; border-radius: 20px; box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); opacity: 0;}
-      #main_work1{width: 1200px; margin: auto; margin-top: 50px;}
+      #main_work1{width: 1200px; margin: auto; margin-top: 100px;}
       #main_work1::after{content: ""; display: block; clear: both;}
       #main_work1_left_img{width: 40%; float: left;}
-      #main_work1_right{width: 55%; float: right;}
+      #main_work1_right{width: 40%; float: left; margin-left: 10%;}
       #main_work1_right>img{width: 300px; margin-top: 30px;}
       #main_work1_right>p{margin-top: 50px;}
-      #main_work1_right>button{width: 130px; height: 40px; border: 2px solid #fff;  border-radius: 50px; margin-top: 20px; cursor: pointer;}
+      #main_work1_right>button{width: 130px; height: 40px; border: 0; border-radius: 50px; margin-top: 20px; cursor: pointer;}
       #main_work2{width: 1200px; margin: auto; margin-top: 100px;}
       #main_work2::after{content: ""; display: block; clear: both;}      #main_work2_left{width: 100%; height: 700px;  margin: auto;}
       #main_work2_left_fonts>h2{font-size: 24px; line-height: 50px;}
@@ -273,8 +275,8 @@
         #main_work_title{width: 96%;}
         #main_work_img{width: 90%;}
         #main_work1{width: 90%;}
-        #main_work1_left_img{width: 40%; margin: 0;}
-        #main_work1_right{width: 55%; margin: 0;}
+        #main_work1_left_img{width: 40%; margin: 0; margin-top: 50px;}
+        #main_work1_right{width: 40%; margin: 0; margin-left: 10%;}
         #main_work1_right>img{margin-top: 0px;}
         #main_work1_right>p{margin-top: 20px;}
         #main_work1_right>button{margin-top: 15px;}
@@ -305,8 +307,8 @@
         #main_work_title{width: 1200px;}
         #main_work_img{width: 970px;}
         #main_work1{width: 1200px;}
-        #main_work1_left_img{width: 40%; margin: 0;}
-        #main_work1_right{width: 55%; margin: 0;}
+        #main_work1_left_img{width: 40%; margin: 0; margin-top: 50px;}
+        #main_work1_right{width: 40%; margin: 0; margin-left: 10%;}
         #main_work1_right>img{margin-top: 30px;}
         #main_work1_right>p{margin-top: 50px;}
         #main_work1_right>button{margin-top: 20px;}
@@ -380,6 +382,7 @@
     </div>
     <section id="main_work">
         <div id="main_work_title">
+            <img src="icons/Oculus-Symbol.png" alt="" class="main_work_oculus_logo">
             <h3>Main work</h3>
             <p>From design planning <br>
                 to CSS, JAVASCRIPT, JQUEARY, 100% handmade</p>
@@ -389,7 +392,7 @@
             <img src="images/oculus_main2.png" alt="" id="main_work1_left_img">
             <div id="main_work1_right">
                 <img src="images/Oculus-Logo2_black_resize.png" alt="">
-                <p>평소 관심이 많았던 주제중 하나인 it를 기획을 했고 그 중에 최근 메타버스로 뜨고 있는 vr회사인 오큘러스를 주제로 선정하여 작업을 했습니다. 디자인 기획부터 css, Jquery, Javascript 작업을 통해 기존 사이트에 없던 새로운 사이트를 구현했습니다. </p>
+                <p>메인 작업의 주제를 정하기 전에 평소 관심이 많았던 주제중 하나인 it를 생각을 두고 기획을 하였고, 그 중에 최근 메타버스로 뜨고 있는 vr회사인 오큘러스를 주제로 선정하여 작업을 하였습니다. 디자인 기획부터 html, css, Jquery, Javascript를 이용한 코딩 작업 전부 직접 작업을 하였으며 컨셉 선정은 기존 사이트에 비중이 적었던 스크롤 애니메이션을 늘려가는 방향을 잡게 되었습니다. 여러 사이트를 보며 다양한 애니메이션을 넣기 위해 작업을 진행 했습니다.</p>
                 <button type="button" onclick="window.open('https:adxu9v.github.io/oculus/')">Let's see !</button>
             </div>
         </div>
@@ -444,7 +447,7 @@
     </section>
     <section id="pc_work">
         <h3>Pc version works</h3>
-        <p>And besides this work, I’m looking forward for new projects and opportunities.</p>
+        <p>본 사이트들은 pc에 최적화 되어있습니다</p>
         <ul>
             <li><img src="images/lotte_main.png" alt=""><button onclick="window.open('https:adxu9v.github.io/lotte/')">lotteworld</button></li>
             <li><img src="images/ever_main.jpg" alt=""><button onclick="window.open('https:adxu9v.github.io/ever/')">everland</button></li>
