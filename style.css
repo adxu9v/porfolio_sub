@@ -91,7 +91,7 @@ header{width: 100%; height: 50px; line-height: 50px; border-top: 1px solid #999;
 #pc_mobile>ul>li>button:hover{background-color: #fff; color: #000;}
 #about_me{width: 100%; padding: 100px 0; text-align: center;}
 #about_me>h3{margin-top: 30px; opacity: 0;}
-#about_me>#about_me_img{width: 200px; height: 200px; border-radius: 200px; margin-top: 50px; opacity: 0;}
+#about_me>#about_me_img{width: 150px; height: 200px; border-radius: 00px; margin-top: 50px; opacity: 0;}
 #about_me1{width: 1000px; border-top: 1px solid #ccc; margin: auto; margin-top: 30px; border-top: 1px solid #000; overflow: hidden;}
 #liscence{width: 48%; margin: 1%; float: left; text-align: left;}
 #liscence>h4{font-size: 16px; line-height: 40px; margin-left: 20px;}
